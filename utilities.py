@@ -17,7 +17,7 @@ def try_again() -> bool:
                 return False
             print("*** Invalid Entery. You Have One More Trial ***")
         
-def get_user(registredUser):
+def get_user_by_id(registredUser):
     userID = input("Enter Your UserID: ")
     # here I am looping through the registered user list to get details of that user
     user_found = list(filter(lambda d: d["userID"] == userID, registredUser))

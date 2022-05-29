@@ -1,5 +1,5 @@
 from atexit import register
-from utilities import get_user,try_again
+from utilities import get_user_by_id, try_again
 
 # list of registered Users in The App
 registredUser = [
@@ -68,7 +68,7 @@ def withdrawal():
     # Your userID will be asked to verify your Identity
     print("**** Welcome To ZURI ATM.\n Please Enter Your userID, To Withdraw \n****")
     # here I am looping through the registered user list to get details of that user
-    user_found = get_user(registredUser)
+    user_found = get_user_by_id(registredUser)
     if user_found:
         identified_user = user_found
         user_name = identified_user["name"]
@@ -102,7 +102,7 @@ def withdrawal():
     return try_again()
 def to_deposit():
     print("**** Welcome To ZURI ATM.\n Please Enter Your userID, To Deposit \n****")
-    user_found = get_user(registredUser)
+    user_found = get_user_by_id(registredUser)
     if user_found:
         identified_user = user_found
         user_name = identified_user["name"]
@@ -124,7 +124,7 @@ def to_deposit():
 def check_balance():
     print(
         "**** Welcome To ZURI ATM.\n Please Enter Your userID, To Check Balance \n****")
-    user_found = get_user(registredUser)
+    user_found = get_user_by_id(registredUser)
     if user_found:
         identified_user = user_found
         user_name = identified_user["name"]
